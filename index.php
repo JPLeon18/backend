@@ -31,6 +31,18 @@ $app->get("/products", function () use ($app,$dbconect){
 
 // ---- ACTUALIZAR DATOS --------------------------------
 
+$app->post("update-product/:id", function ($id)use ($dbconect, $app){
+
+    $json = $app ->request->post('json');
+    $data = json_decode($json, true);
+
+    $sql = "UPDATE productos SET ".
+        "nombre = '{$data['nombre']}',".
+        "descripcion = '{$data['descripcion']}',".
+        "precio ="
+
+});
+
 // ---- DEVOLVER UN PRODUCTO -----------------------------
 
 $app->get("/products/:id",function ($id)use ($app,$dbconect){
